@@ -14,10 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+
+import services.ApiHandler;
+import services.CsvHandler;
 
 
 /**
- * This servlet controls the user's login to validate it and start the session
+ * This servlet controls the application operation
  */
 @WebServlet("/FormController")
 public class FormController extends HttpServlet {
@@ -28,8 +32,10 @@ public class FormController extends HttpServlet {
      */
     public FormController() {
         super();
-        // TODO Auto-generated constructor stub
     }
+    //Object instantiation
+    CsvHandler ch = new CsvHandler();
+    ApiHandler ah = new ApiHandler();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -52,6 +58,7 @@ public class FormController extends HttpServlet {
 		
 		String country = request.getParameter("country").trim();
 		String csvFileReceived = request.getParameter("csvFile").trim();
+		csvFileReceived = csvFileReceived.replace(";", ",");
     	
     	if(country == "" && csvFileReceived == "") {
     		
@@ -68,6 +75,16 @@ public class FormController extends HttpServlet {
     	} else if(csvFileReceived != "") {
     		
     		CSVReader csvFile = new CSVReader(new FileReader(csvFileReceived));
+    	
+    		try {
+    			
+				ch.extractLines(csvFile);
+				
+			} catch (CsvValidationException | IOException e) {
+				
+				e.printStackTrace();
+			}
+    		
     		csvFile.close();
     		
     	} else {

@@ -36,14 +36,14 @@ public class ApiHandler {
 	         connection.connect();
 	         
 	         // Lectura
-	         StringBuffer texto = new StringBuffer();
+	         StringBuffer text = new StringBuffer();
 	         InputStream is = connection.getInputStream();
 	         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 	         String data = br.readLine();
 	          
 	         while(data != null){
             
-                  texto.append(data + "\n"); 
+                  text.append(data + "\n"); 
                   data = br.readLine();
               }
 	          
