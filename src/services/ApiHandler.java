@@ -27,39 +27,37 @@ public class ApiHandler {
 		return jsonReceived;
 	}
 	
-	public String ApiCall(String countryData) {
+	public String ApiCall(String country) {
 		
+		String data = null;
+		String json = null;
+		System.out.println("País Json " + country);
 		try {
-	         // Se abre la conexión
-	         URL url = new URL("https://api.covid19api.com/country/" + countryData);
+	         //Establish connection
+	         URL url = new URL("https://api.covid19api.com/country/" + country);
 	         URLConnection connection = url.openConnection();
 	         connection.connect();
-	         
-	         // Lectura
-	         StringBuffer text = new StringBuffer();
+	         //Read data
+	         //StringBuffer text = new StringBuffer();
 	         InputStream is = connection.getInputStream();
 	         BufferedReader br = new BufferedReader(new InputStreamReader(is));
-	         String data = br.readLine();
 	          
-	         while(data != null){
+	         while((data = br.readLine()) != null){
             
-                  text.append(data + "\n"); 
-                  data = br.readLine();
+                  //text.append(data + "\n"); 
+                  json += data;
               }
 	          
 	      } catch (MalformedURLException e) {
 	    	  
-	         // TODO Auto-generated catch block
 	         e.printStackTrace();
 	         
 	      } catch (IOException e) {
 	    	  
-	         // TODO Auto-generated catch block
 	         e.printStackTrace();
 	      }
-		
-		String xxx = "";
-		return xxx;
+
+		return json;
 	}
 	
 }

@@ -1,6 +1,7 @@
 package controllers;
-import java.io.FileReader;
+import java.io.BufferedReader;
 //Import files
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -57,8 +58,7 @@ public class FormController extends HttpServlet {
 		RequestDispatcher requestDispatcher;
 		
 		String country = request.getParameter("country").trim();
-		String csvFileReceived = request.getParameter("csvFile").trim();
-		csvFileReceived = csvFileReceived.replace(";", ",");
+		String csvFileReceived = request.getParameter("csvFile").trim();	
     	
     	if(country == "" && csvFileReceived == "") {
     		
@@ -72,15 +72,16 @@ public class FormController extends HttpServlet {
     		requestDispatcher = request.getRequestDispatcher("/index.jsp");
     		requestDispatcher.include(request, response);
     		
+    		
     	} else if(csvFileReceived != "") {
     		
-    		CSVReader csvFile = new CSVReader(new FileReader(csvFileReceived));
-    	
+    		//CSVReader csvFile = new CSVReader(new FileReader(csvFileReceived));
+    		BufferedReader csvFile = new BufferedReader(new FileReader(csvFileReceived));
     		try {
     			
 				ch.extractLines(csvFile);
 				
-			} catch (CsvValidationException | IOException e) {
+			} catch (IOException e) {
 				
 				e.printStackTrace();
 			}
@@ -89,7 +90,7 @@ public class FormController extends HttpServlet {
     		
     	} else {
     		
-    		
+    	
     	}
     	
     	
