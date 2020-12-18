@@ -1,0 +1,59 @@
+@charset "ISO-8859-1";
+
+	body{
+     background-color: lightyellow;
+     display: flex;
+    }
+    .myContainer{
+     height: 100%;
+     width: 99%;
+    }
+    .myFooter{
+     bottom: 0;
+     display: float;
+     position: fixed;
+     height: 9%;
+     width: 100%;
+     background-color: lightcyan;
+     margin-left: 0%;
+     margin-right: 0%;
+    }
+    .formRow{
+     padding-top: 15%;
+     padding-bottom: 27%;
+    }
+
+    form{
+     padding: 12%;
+     border: solid 2px #000000;
+     background-color: lightcyan;
+    }
+    .margin_top{
+     margin-top: 20px;
+    }
+    h2{
+     position: absolute;
+     width: 100%;
+     text-align:center;
+    }
+    span{
+     font-size: 18px;
+    }
+    .font1{
+     font-size: 20px;
+     font-style: italic;
+    }
+    .font2{
+     font-size: 28px;
+     font-weight: bold;
+    }
+    
+    @media (max-width: 767px) {
+     	.font1{
+     	 font-size: 14px;
+     	}
+     	.font2{
+     	 font-size: 18px;
+     	}
+	}
+	

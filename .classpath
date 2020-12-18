@@ -13,6 +13,12 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/jee-2019-12/trabajos/Covid_data_ilustration/lib/opencsv-5.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/opencsv-5.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-20201115.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-6.16.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-chart-customizers-6.16.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-chart-themes-6.16.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

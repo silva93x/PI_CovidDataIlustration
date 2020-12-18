@@ -9,54 +9,7 @@
     <%@include file="resources/bootstrap/css/bootstrap.min.css" %>
     <%@include file="resources/bootstrap/css/bootstrap-grid.min.css" %>
     <%@include file="resources/bootstrap/css/bootstrap-reboot.min.css" %>
-    
-    body{
-     background-color: lightyellow;
-     display: flex;
-    }
-    .myContainer{
-     height: 100%;
-     width: 99%;
-    }
-    .myFooter{
-     bottom: 0;
-     display: float;
-     position: fixed;
-     height: 9%;
-     width: 100%;
-     background-color: lightcyan;
-     margin-left: 0%;
-     margin-right: 0%;
-    }
-    .formRow{
-     padding-top: 15%;
-     padding-bottom: 27%;
-    }
-
-    form{
-     padding: 12%;
-     border: solid 2px #000000;
-     background-color: lightcyan;
-    }
-    .margin_top{
-     margin-top: 20px;
-    }
-    h2{
-     position: absolute;
-     width: 100%;
-     text-align:center;
-    }
-    span{
-     font-size: 18px;
-    }
-    .font1{
-     font-size: 20px;
-     font-style: italic;
-    }
-    .font2{
-     font-size: 28px;
-     font-weight: bold;
-    }
+    <%@include file="resources/css/main.css" %>
 </style>
 </head>
 <body>
@@ -67,7 +20,7 @@
 				<div>
 					<span>¿Cómo desea insertar los nombres de los países?</span>
 				</div>
-				<form name="form1" method="post" action="FormController">
+				<form id="myForm" name="myForm" method="post" action="FormController">
 					<div>
 						<label for="country">Introducir manualmente:</label>
 					</div>
@@ -81,7 +34,7 @@
 						<input class="form-control" type="file" accept=".csv" name="csvFile" id="csvFile">
 					</div>
 					<div class="margin_top d-flex justify-content-end">
-						<input type="submit" name="submit" value="Solicitar">
+						<input id="submitButton" type="button" name="submitButton" value="Solicitar">
 					</div>
 				</form>
 			</div>
@@ -99,14 +52,21 @@
 			</div>
 		</div>
 	</div>
-	
-	<script type="text/javascript" src="WebContent/resources/bootstrap/js/jquery.js"></script>
+		
+	<script type="text/javascript" src="resources/bootstrap/js/jquery.js"></script>
 	<script type="text/javascript" src="resources/bootstrap/js/popper.js"></script>
 	<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="resources/js/validations.js"></script>
 	
 	<script type="text/javascript">
 
-	</script>	
+		$(document).ready(function(){
+
+			$("#submitButton").on("click", validateForm);
+
+		});
+	
+	</script>
 </body>
 </html>
