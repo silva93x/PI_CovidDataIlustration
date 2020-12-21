@@ -14,6 +14,17 @@
 </head>
 <body>
 	<div class="myContainer">
+		<div class="row myHeader">
+			<div class="col-3 d-flex justify-content-start align-items-end font1">
+				<p></p>
+			</div>
+			<div class="col-6 d-flex justify-content-center align-items-center font2">
+				<p>Covid Data Ilustration</p>
+			</div>
+			<div class="col-3 d-flex justify-content-end align-items-end font1">
+				<p></p>
+			</div>
+		</div>
 		<div class="row formRow justify-content-center">
 			<div class="col"></div>
 			<div class="col-5 align-self-center">
@@ -45,7 +56,7 @@
 				<p>@2020 Silvax Solutions</p>
 			</div>
 			<div class="col-6 d-flex justify-content-center align-items-center font2">
-				<p>Covid Data Ilustration</p>
+				<p></p>
 			</div>
 			<div class="col-3 d-flex justify-content-end align-items-end font1">
 				<p>V1.0</p>

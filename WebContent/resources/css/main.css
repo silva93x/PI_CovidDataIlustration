@@ -1,12 +1,23 @@
 @charset "ISO-8859-1";
 
-	body{
+    body{
      background-color: lightyellow;
      display: flex;
     }
     .myContainer{
      height: 100%;
      width: 99%;
+    }
+     .myHeader{
+     top: 0;
+     display: float;
+     position: fixed;
+     height: 9%;
+     width: 100%;
+     background-color: lightcyan;
+     margin-left: 0%;
+     margin-right: 0%;
+     z-index: 2;
     }
     .myFooter{
      bottom: 0;
@@ -49,11 +60,11 @@
     }
     
     @media (max-width: 767px) {
-     	.font1{
-     	 font-size: 14px;
-     	}
-     	.font2{
-     	 font-size: 18px;
-     	}
-	}
-	
+        .font1{
+         font-size: 14px;
+        }
+        .font2{
+         font-size: 18px;
+        }
+    }
+    
